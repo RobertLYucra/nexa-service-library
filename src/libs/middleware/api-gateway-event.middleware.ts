@@ -27,6 +27,18 @@ export class ApiGatewayEventMiddleware {
         const expressHandler = app.getHttpAdapter().getInstance();
         this.cachedServer = configure({ app: expressHandler });
       }
+
+      // Fix para error de "request size did not match content length" 
+      // al usar caracteres especiales (tildes, eñes) en serverless-express.
+      if (event && event.headers) {
+        delete event.headers['Content-Length'];
+        delete event.headers['content-length'];
+      }
+      if (event && event.multiValueHeaders) {
+        delete event.multiValueHeaders['Content-Length'];
+        delete event.multiValueHeaders['content-length'];
+      }
+
       return this.cachedServer(event, context, callback);
     };
   }

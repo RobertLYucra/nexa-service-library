@@ -24,6 +24,14 @@ class ApiGatewayEventMiddleware {
                 const expressHandler = app.getHttpAdapter().getInstance();
                 this.cachedServer = (0, serverless_express_1.configure)({ app: expressHandler });
             }
+            if (event && event.headers) {
+                delete event.headers['Content-Length'];
+                delete event.headers['content-length'];
+            }
+            if (event && event.multiValueHeaders) {
+                delete event.multiValueHeaders['Content-Length'];
+                delete event.multiValueHeaders['content-length'];
+            }
             return this.cachedServer(event, context, callback);
         };
     }
