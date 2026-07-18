@@ -1,0 +1,11 @@
+export declare enum CampaignDetailStatus {
+    QUEUED = "QUEUED",
+    SENDING = "SENDING",
+    SENT = "SENT",
+    DELIVERED = "DELIVERED",
+    UNDELIVERED = "UNDELIVERED",
+    FAILED = "FAILED",
+    REJECTED = "REJECTED",
+    BLACKLISTED = "BLACKLISTED",
+    INVALID = "INVALID"
+}
