@@ -1,7 +1,14 @@
 {
-  "name": "@nexa/core",
+  "name": "@robertlyucra/nexa-core",
   "version": "1.0.0",
   "description": "Shared core library for Nexa microservices",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertLYucra/nexa-service-library.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
