@@ -1,6 +1,6 @@
 {
   "name": "@robertlyucra/nexa-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared core library for Nexa microservices",
   "repository": {
     "type": "git",
